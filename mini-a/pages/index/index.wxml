@@ -1,0 +1,30 @@
+<view class="container">
+  <textarea class="code-editor" bindinput="handleInput" value="{{code}}" placeholder="请输入代码"></textarea>
+  
+  <view class="button-group">
+    <button bindtap="undo">撤销</button>
+    <button bindtap="redo">重做</button>
+    <button class="compile-button" bindtap="compileCode" style="width: 150rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">编译</button>
+    
+  </view>
+  
+  <view class="output-section" style="height: 160rpx; display: block; box-sizing: border-box">
+    <text>输出:</text>
+    <view class="output-content">{{output}}</view>
+  </view>
+  
+  <!-- 新增可点击的历史记录标题 -->
+  <view class="collapse-header" bindtap="toggleHistory">
+    <text>历史记录: {{isHistoryExpanded ? '↑' : '↓'}}</text>
+  </view>
+  
+  <!-- 历史记录内容受控于 isHistoryExpanded -->
+  <view wx:if="{{isHistoryExpanded}}" class="history-section">
+    <scroll-view scroll-y="true" class="history-list">
+      <block wx:for="{{history}}" wx:key="index">
+        <view class="history-item" data-index="{{index}}" bindtap="selectHistory">{{item}}</view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+

@@ -1,0 +1,11 @@
+{
+  
+    "navigationBarTitleText": "C语言编译器",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  
+}
+
